@@ -1,10 +1,12 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'index.js'),
+  entry: ["@babel/polyfill", path.resolve(__dirname, 'index.jsx')],
   output: {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -13,13 +15,22 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './index.html',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'assets'),
+          to: path.resolve(__dirname, 'dist/assets')
+        },
+      ],
+    }),
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
@@ -29,6 +40,39 @@ module.exports = {
         test: /\.(ttf|woff|eot)$/,
         use: ['file-loader']
       },
+      {
+        test: /\.xml$/,
+        use: ['xml-loader']
+      },
+      {
+        test: /\.csv$/,
+        use: ['csv-loader']
+      },
+      {
+        test: /\.less$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ["@babel/plugin-proposal-class-properties"]
+          }
+        }
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-react']
+          }
+        }
+      }
     ]
   }
 }
