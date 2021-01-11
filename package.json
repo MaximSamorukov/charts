@@ -1,0 +1,26 @@
+{
+  "name": "charts",
+  "version": "1.0.0",
+  "description": "Aplication to get and show data from finance and news api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximSamorukov/charts.git"
+  },
+  "keywords": [
+    "charts",
+    "market",
+    "finance",
+    "stocks",
+    "futures"
+  ],
+  "author": "Maksim Samorukov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximSamorukov/charts/issues"
+  },
+  "homepage": "https://github.com/MaximSamorukov/charts#readme"
+}
