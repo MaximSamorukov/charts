@@ -1,1 +1,1 @@
-Applcation that provide a user with market exchange data
+Applcation that provides a user with market exchange data
