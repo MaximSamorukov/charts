@@ -4,4 +4,7 @@ module.exports = {
   ALPACA_CLIENT_SECRET: 'e5a399e8ab9ca9ab00f69fedebc4b8640c6f4d12', // Alpaca Client Secret
   ALPACA_BASE_URL_PAPER: 'paper-api.alpaca.markets',
   ALPACA_BASE_URL: 'api.alpaca.markets',
+  ALPACA_BASE_URL_DATA: 'data.alpaca.markets',
+  ALPHA_API_KEY: 'O6D8VVGLGWC2S1UF', // alphavantage api-key
+  ALPHA_BASE_URL: 'www.alphavantage.co'
 }
