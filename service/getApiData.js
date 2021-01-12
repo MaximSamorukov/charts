@@ -1,20 +1,21 @@
-// const Alpaca = require('@alpacahq/alpaca-trade-api');
-// import Alpaca from '@alpacahq/alpaca-trade-api';
-import { ALPACA_CLIENT_ID, ALPACA_CLIENT_SECRET } from '../constants';
+const axios = require('axios');
+import { ALPACA_CLIENT_ID, ALPACA_CLIENT_SECRET, ALPACA_BASE_URL_PAPER, ALPACA_BASE_URL } from '../constants';
 
-// const alpaca = new Alpaca({
-//   keyId: ALPACA_CLIENT_ID,
-//   secretKey: ALPACA_CLIENT_SECRET,
-//   paper: true,
-//   usePolygon: false
-// });
-
-const asr = {
-  v: 123,
+async function getUser() {
+  try {
+    const response = await axios.get(`https://${ALPACA_BASE_URL_PAPER}/v2/account`, {
+      headers: {
+        'APCA-API-KEY-ID': { ALPACA_CLIENT_ID },
+        'APCA-API-SECRET-KEY': { ALPACA_CLIENT_SECRET }
+      }
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-export { asr };
-// alpaca.getAccount().then((account) => {
-//   console.log('Current Account:', account)
-// })
+
+export { getUser };
+
 
