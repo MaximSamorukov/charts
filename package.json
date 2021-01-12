@@ -7,6 +7,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaximSamorukov/charts.git"
@@ -47,6 +48,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "node-polyfill-webpack-plugin": "^1.0.2",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -16,6 +17,7 @@ module.exports = {
       template: './index.html',
     }),
     new CleanWebpackPlugin(),
+    new NodePolyfillPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -24,7 +26,9 @@ module.exports = {
         },
       ],
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'bundle.css'
+    }),
   ],
   module: {
     rules: [
