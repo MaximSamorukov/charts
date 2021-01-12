@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom'
 import { getList } from './service/getApiData';
 // import './styles/styles.css';
 
@@ -11,4 +11,4 @@ const App = () => {
   return <div>React</div>
 };
 
-render(<App />, document.getElementById('container'))
+ReactDOM.render(<App />, document.getElementById('container'))
