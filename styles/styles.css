@@ -14,6 +14,13 @@
 .markets-container button {
   font-size: 12px;
 }
+
+@media (max-width: 340px) {
+  .markets-container button {
+    font-size: 10px;
+  }
+}
+
 .list-container, .news-container {
   min-height: 40%;
   height: 40%;
