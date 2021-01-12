@@ -3,7 +3,22 @@
 * {
   padding: 0;
 }
-
+#main-container {
+  min-height: 100vh;
+  height: 100vh;
+}
 .border {
   border: 2px solid red;
+}
+
+.markets-container button {
+  font-size: 12px;
+}
+.list-container, .news-container {
+  min-height: 40%;
+  height: 40%;
+}
+.graph-container {
+  min-height: 60%;
+  height: 60%;
 }
