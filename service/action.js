@@ -7,4 +7,12 @@ const changeMarket = (market) => {
   })
 }
 
-export { changeMarket };
+const changeTicket = (ticket) => {
+  return ({
+    type: 'CHANGE_TICKET',
+    payload: {
+      ticket,
+    }
+  })
+}
+export { changeMarket, changeTicket };

@@ -5,6 +5,8 @@ const reducer = (state, { type, payload }) => {
   switch (type) {
     case 'CHANGE_MARKET':
       return { ...state, market: payload.market };
+    case 'CHANGE_TICKET':
+      return { ...state, ticket: payload.ticket };
     default:
       return state;
   }

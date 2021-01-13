@@ -6,7 +6,7 @@ import { filterByExchange } from './filters';
 
 function getList(market) {
   try {
-    return (filterByExchange(market).map((i) => [i[0], i[1]])); // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
+    return (filterByExchange(market).map((i) => [i[0], i[1], i[3]])); // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
 
   } catch (error) {
     console.error(error);

@@ -6,18 +6,22 @@ import { store } from '../service/reducer';
 import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
+import { changeTicket } from '../service/action';
 
 class List_ extends React.Component {
   constructor(props) {
     super(props)
   };
+
+  onclick(e) {
+    store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
+  }
   render() {
-    // console.log(store.getState());
     const { market } = store.getState();
     return <div className={'ticket-list-container d-flex flex-column container-fluid addScroll'}>{
       getList(market).map((i) => (
-        <div className={'list-string'} key={uuidv4()}>
-          <div className={'list-string-fcol'}>{i[0]}</div>
+        <div onClick={this.onclick} className={'list-string'} key={uuidv4()}>
+          <div className={'list-string-fcol'}>{i[0]}, {i[2]}</div>
           <div className={'list-string-scol'}>{i[1]}</div>
         </div>
       ))

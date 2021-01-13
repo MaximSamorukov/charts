@@ -6,5 +6,6 @@ module.exports = {
   ALPACA_BASE_URL: 'api.alpaca.markets',
   ALPACA_BASE_URL_DATA: 'data.alpaca.markets',
   ALPHA_API_KEY: 'O6D8VVGLGWC2S1UF', // alphavantage api-key
-  ALPHA_BASE_URL: 'www.alphavantage.co'
+  ALPHA_BASE_URL: 'www.alphavantage.co',
+  NEWS_KEY: '29bef41e202441aeb0287eeae48a4301' // https://newsapi.org/ https://newsapi.org/docs/get-started
 }
