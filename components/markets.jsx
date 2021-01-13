@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { layout } from '../service/layoutCreater';
+import { changeMarket } from '../service/action';
+import { store } from '../service/reducer';
 
 // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
 export default class Markets extends React.Component {
@@ -8,7 +10,8 @@ export default class Markets extends React.Component {
     super(props)
   };
   onclick(e) {
-    console.log(e.target.textContent);
+    store.dispatch(changeMarket(e.target.textContent));
+
   }
   render() {
     const { name } = this.props;

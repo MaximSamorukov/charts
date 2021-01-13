@@ -4,6 +4,8 @@ import { getList } from './service/getApiData';
 import Container from './components/component.jsx';
 import './styles/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import { store } from './service/reducer';
 
 // console.log(asr);
 // index.js
@@ -18,4 +20,7 @@ const App = () => {
   )
 };
 
-ReactDOM.render(<App />, document.getElementById('main-container'))
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('main-container'))
