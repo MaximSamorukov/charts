@@ -1,7 +1,7 @@
 import { initstate } from '../charts';
 import { createStore } from 'redux';
 
-const reducer = (state = initstate, { type, payload }) => {
+const reducer = (state, { type, payload }) => {
   switch (type) {
     case 'CHANGE_MARKET':
       return { ...state, market: payload.market };
@@ -10,7 +10,7 @@ const reducer = (state = initstate, { type, payload }) => {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, initstate);
 store.subscribe(() => {
   console.log(store.getState());
 })

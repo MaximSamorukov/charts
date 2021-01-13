@@ -4,9 +4,10 @@ import { layout } from '../service/layoutCreater';
 import { getList } from '../service/getApiData';
 import { store } from '../service/reducer';
 import { v4 as uuidv4 } from 'uuid';
+import { connect } from 'react-redux';
+import { mapStateToProps } from '../service/mapStatetoProps';
 
-
-export default class List extends React.Component {
+class List_ extends React.Component {
   constructor(props) {
     super(props)
   };
@@ -23,3 +24,5 @@ export default class List extends React.Component {
     }</div>
   }
 }
+
+export default connect(mapStateToProps, null)(List_);

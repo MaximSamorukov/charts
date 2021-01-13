@@ -4,9 +4,11 @@ import { layout } from '../service/layoutCreater';
 import { changeMarket } from '../service/action';
 import { store } from '../service/reducer';
 import { ifActiveBtn } from '../service/ifActiveBtn';
+import { connect } from 'react-redux';
+import { mapStateToProps } from '../service/mapStatetoProps';
 
 // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
-export default class Markets extends React.Component {
+class Markets_ extends React.Component {
   constructor(props) {
     super(props)
   };
@@ -16,6 +18,7 @@ export default class Markets extends React.Component {
   }
   render() {
     const { name } = this.props;
+    // console.log(this.props);
     return (
       <div className={`border markets-container d-flex col-12`}>
         <div onClick={this.onclick} className="btn-group container-fluid d-flex justify-content-around flex-nowrap p-0 m-0">
@@ -29,3 +32,5 @@ export default class Markets extends React.Component {
     )
   }
 }
+
+export default connect(mapStateToProps, null)(Markets_);
