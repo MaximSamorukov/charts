@@ -11,6 +11,11 @@
   border: 2px solid red;
 }
 
+.markets-container {
+  height: 30px;
+  min-height: 30px;
+}
+
 .markets-container button {
   font-size: 12px;
 }
@@ -25,7 +30,42 @@
   min-height: 40%;
   height: 40%;
 }
+
+.list-container {
+  justify-content: stretch;
+}
+
 .graph-container {
   min-height: 60%;
   height: 60%;
+}
+
+.ticket-list-container {
+  flex: 1;
+}
+
+.addScroll {
+  overflow-y: auto;
+}
+
+.list-string {
+  display: flex;
+  justify-content: start;
+  font-size: 10px;
+  margin-top: 2px;
+  width: 100%;
+  min-width: 100%;
+  border: 1px solid red;
+}
+
+.list-string-fcol {
+  margin-right: 1px;
+  width: 15%;
+  min-width: 15%;
+  border: 1px solid green;
+}
+
+.list-string-scol {
+  border: 1px solid green;
+  flex: 1;
 }

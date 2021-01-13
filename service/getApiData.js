@@ -4,9 +4,10 @@ import csvFile from '../assets/list_2021_01_12.csv';
 import { ALPHA_BASE_URL, ALPHA_API_KEY } from '../constants';
 import { filterByExchange } from './filters';
 
-async function getList() {
+function getList(market) {
   try {
-    console.log(filterByExchange('NYSE MKT')); // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
+    return (filterByExchange(market).map((i) => [i[0], i[1]])); // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
+
   } catch (error) {
     console.error(error);
   }
