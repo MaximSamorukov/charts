@@ -40,8 +40,13 @@
   height: 60%;
 }
 
-.ticket-list-container {
+.ticket-list-container,
+.news-list-container {
   flex: 1;
+}
+
+.news-list-container {
+  background-color: greenyellow;
 }
 
 .addScroll {
