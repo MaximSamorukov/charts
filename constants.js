@@ -10,4 +10,9 @@ module.exports = {
   NEWS_KEY: '29bef41e202441aeb0287eeae48a4301', // https://newsapi.org/ https://newsapi.org/docs/get-started
   NEWS_URL_SOURCE: '/v2/sources',
   NEWS_URL_BASE: 'newsapi.org',
+  CORS: 'cors-anywhere.herokuapp.com/',
+  NEWSCATCHER_KEY: '783fe2d128msh8b8ef5dd44cef89p1e763cjsne742149dfbb1',
+  NEWSCATCHER_HOST: 'newscatcher.p.rapidapi.com',
+  NEWSCATCHER_BASE: 'newscatcher.p.rapidapi.com/v1',
+  NEWSCATCHER_LATEST: '/latest_headlines',
 }

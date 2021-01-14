@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
 import { getNewsRequest } from '../service/getNewsRequest';
-
+import NewsItem from './newsItem.jsx';
 
 class News_ extends React.Component {
   constructor(props) {
@@ -18,16 +18,26 @@ class News_ extends React.Component {
     // store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
   }
   render() {
-    (getNews(getNewsRequest()));
-    return <div className={'news-list-container d-flex flex-column container-fluid addScroll'}>fdf</div>
+    // (getNews(getNewsRequest()));
+    return <div className={'news-list-container d-flex flex-column container-fluid addScroll'}>
+      {[1, 2, 3, 4, 5].map((i) => <NewsItem key={uuidv4()} data={i} />)}
+    </div>
   }
 }
 
 export default connect(mapStateToProps, null)(News_);
 
-// getNews(getNewsRequest()).map((i) => (
-//   <div onClick={this.onclick} className={'list-string'} key={uuidv4()}>
-//     <div className={'list-string-fcol'}>{i[0]}, {i[2]}</div>
-//     <div className={'list-string-scol'}>{i[1]}</div>
-//   </div>
-// ))
+// articles: Array(5)
+// 0:
+// author: "Sharon Wrobel"
+// clean_url: "tipranks.com"
+// country: "IS"
+// language: "en"
+// link: "https://blog.tipranks.com/google-nokia-partner-to-develop-cloud-based-5g-network/"
+// published_date: "2021-01-14 16:35:51"
+// rank: "64651"
+// rights: "tipranks.com"
+// summary: "Nokia has teamed up with Google Cloud to develop 5G core network infrastructure and enable business customers to offer a platform for smart retail, automated manufacturing, and other online consumer Read More... The post Google, Nokia Partner To Develop Cloud-Based 5G Network appeared first on TipRanks Financial Blog."
+// title: "Google, Nokia Partner To Develop Cloud-Based 5G Network"
+// topic: "finance"
+// _id: "20915dab2f369d8dbbe29b5a4efbf9a1"
