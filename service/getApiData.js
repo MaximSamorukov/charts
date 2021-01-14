@@ -31,7 +31,7 @@ async function getCompany() {
   }
 }
 
-async function getNews({ category, language, country }) {
+async function getNews() {
   try {
     const response = await axios.get(`https://${NEWSCATCHER_BASE}${NEWSCATCHER_LATEST}`, {
       headers: {

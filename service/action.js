@@ -15,4 +15,13 @@ const changeTicket = (ticket) => {
     }
   })
 }
-export { changeMarket, changeTicket };
+
+const addData = (news) => {
+  return ({
+    type: 'ADD_NEWS',
+    payload: {
+      news
+    }
+  })
+}
+export { changeMarket, changeTicket, addData };

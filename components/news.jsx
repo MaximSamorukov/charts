@@ -8,19 +8,24 @@ import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
 import { getNewsRequest } from '../service/getNewsRequest';
 import NewsItem from './newsItem.jsx';
+import { addData } from '../service/action';
 
 class News_ extends React.Component {
   constructor(props) {
     super(props)
   };
 
-  onclick(e) {
-    // store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
+  componentDidMount() {
+    getNews()
+      .then((items) => {
+        store.dispatch(addData(items));
+      })
   }
+
   render() {
-    // (getNews(getNewsRequest()));
+    const { news } = this.props;
     return <div className={'news-list-container d-flex flex-column container-fluid addScroll'}>
-      {[1, 2, 3, 4, 5].map((i) => <NewsItem key={uuidv4()} data={i} />)}
+      {news.map((i) => <NewsItem key={uuidv4()} data={i} />)}
     </div>
   }
 }

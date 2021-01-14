@@ -18,8 +18,15 @@ class NewsItem_ extends React.Component {
     // store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
   }
   render() {
-    // (getNews(getNewsRequest()));
-    return <div className={'news-list-item d-flex container-fluid'}>{this.props.data}</div>
+    const { author, link, published_date, summary, title, topic } = this.props.data;
+    return <div className={'news-list-item d-flex container-fluid'}>
+      <div className={'d-flex m-0 p-0 container-fluid justify-content-between'}>
+        <div className={'news-item-title'}><a href={link}>{title}</a></div>
+        <div className={'news-item-date'}>{new Date(Date.parse(published_date)).toDateString()}</div>
+      </div>
+      <div className={'news-item-author'}>{`Author: ${author || '-'}`}</div>
+      <div className={'news-item-sum'}>{summary}</div>
+    </div>
   }
 }
 
