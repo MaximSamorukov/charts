@@ -18,7 +18,7 @@ class News_ extends React.Component {
     // store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
   }
   render() {
-    console.log(getNews(getNewsRequest()));
+    (getNews(getNewsRequest()));
     return <div className={'news-list-container d-flex flex-column container-fluid addScroll'}>fdf</div>
   }
 }

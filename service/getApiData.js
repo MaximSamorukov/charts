@@ -34,11 +34,8 @@ async function getCompany() {
 async function getNews({ category, language, country }) {
   try {
     const response = await axios.get(`https://${NEWS_URL_BASE}${NEWS_URL_SOURCE}`, {
-      params: {
-        category,
-        language,
-        country,
-        apiKey: NEWS_KEY
+      headers: {
+        'X-Api-Key': NEWS_KEY
       }
     });
     console.log(response);
