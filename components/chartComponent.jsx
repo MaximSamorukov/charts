@@ -20,8 +20,8 @@ class Chart_ extends React.Component {
     const { dataForCharts } = this.props;
     const target = (document.querySelector('#chart-cont'));
     const place = new ApexCharts(target, dataForCharts);
-    console.log(dataForCharts);
-    console.log(target);
+    // console.log(dataForCharts);
+    // console.log(target);
     place.render();
   }
 
