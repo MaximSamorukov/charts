@@ -4,12 +4,12 @@ charts-dev => https://goofy-curie-94191e.netlify.app/
 
 Приложение Charts
 
-Использование сторонних API для представления новойстей и биржевых котировок.
+1. Использование сторонних API для представления новойстей и биржевых котировок.
 
-Приложение разрабатывается с применением React, Redux, React-Redux, Bootstrap, Webpack.
+2. Приложение разрабатывается с применением React, Redux, React-Redux, Bootstrap, Webpack.
 
-Для представления котировок акций и ETF бирж "NYSE", "NYSE ARCA", "NYSE MKT", "NASDAQ", "BATS" используется api от Alphavantage.
+3. Для представления котировок акций и ETF бирж "NYSE", "NYSE ARCA", "NYSE MKT", "NASDAQ", "BATS" используется api от Alphavantage.
 
-Для представления графиков используется библиотека используется библиотека apexcharts.js.
+4. Для представления графиков используется библиотека apexcharts.js.
 
-Для получения новостей используется api от newsapi.org.
+5. Для получения новостей используется api от newsapi.org.
