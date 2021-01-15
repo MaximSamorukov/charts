@@ -4,6 +4,7 @@ import { layout } from '../service/layoutCreater';
 import Markets from './markets.jsx';
 import List from './list.jsx';
 import News from './news.jsx';
+import Graph from './graph.jsx';
 
 export default class Container extends React.Component {
   constructor(props) {
@@ -19,6 +20,11 @@ export default class Container extends React.Component {
     if (name === 'news') {
       return (
         <div className={`border d-flex flex-column col-sm-${layout(name)} col-12`}><News /></div>
+      )
+    };
+    if (name === 'graph') {
+      return (
+        <div className={`border d-flex flex-column col-sm-${layout(name)} col-12`}><Graph /></div>
       )
     };
     return (
