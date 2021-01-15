@@ -1,5 +1,5 @@
-export default (item) => {
-  console.log(item);
+export default ({ item, store: { interval, market, ticket } }) => {
+  // console.log(item);
   const data = item.map(({ open, high, low, close, date }) => {
     return {
       x: `${date.getUTCMonth() + 1}/${date.getUTCDate()} / ${date.getUTCHours()}:${date.getUTCMinutes()}`,
@@ -13,7 +13,7 @@ export default (item) => {
       type: 'candlestick',
     },
     title: {
-      text: 'Experimental data',
+      text: `${ticket}, ${market}, ${interval}`,
       align: 'center',
     },
     xaxis: {

@@ -18,8 +18,8 @@ class Chart_ extends React.Component {
 
   componentDidUpdate() {
     const { dataForCharts } = this.props;
-    console.log('!!!!!!');
-    console.log(dataForCharts)
+    // console.log('!!!!!!');
+    // console.log(dataForCharts)
   }
 
   componentDidMount() {
@@ -32,9 +32,7 @@ class Chart_ extends React.Component {
   }
 
   render() {
-    return <div id={'chart-cont'} className={'chart-container d-flex flex-column container-fluid addScroll'}>
-      Graph
-    </div>
+    return <div id={'chart-cont'} className={'chart-container d-flex flex-column container-fluid addScroll'} />
   }
 }
 

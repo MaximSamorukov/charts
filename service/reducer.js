@@ -16,7 +16,10 @@ const reducer = (state, { type, payload }) => {
         ...state,
         dataForCharts,
         dataAvailable: 'available',
-      }
+      };
+    case 'CHANGE_INTERVAL':
+      const { interval } = payload;
+      return { ...state, interval, dataAvailable: 'not-available' };
     default:
       return state;
   }

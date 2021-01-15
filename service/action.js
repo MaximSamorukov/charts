@@ -34,4 +34,13 @@ const addChartData = (dataForCharts) => {
   })
 }
 
-export { changeMarket, changeTicket, addData, addChartData };
+const changeInterval = (interval) => {
+  return ({
+    type: 'CHANGE_INTERVAL',
+    payload: {
+      interval
+    }
+  })
+}
+
+export { changeMarket, changeTicket, addData, addChartData, changeInterval };

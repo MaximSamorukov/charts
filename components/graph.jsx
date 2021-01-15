@@ -9,6 +9,7 @@ import { getNewsRequest } from '../service/getNewsRequest';
 import NewsItem from './newsItem.jsx';
 import { addChartData } from '../service/action';
 import Chart from './chartComponent.jsx';
+import Filter from './changeFilter.jsx';
 import { getQuotes } from '../service/getApiData';
 import createOptions from '../service/createObjectForChart';
 
@@ -30,11 +31,10 @@ class Graph_ extends React.Component {
 
   componentDidUpdate() {
     const { dataAvailable } = this.props;
-    console.log(this.props);
     if (dataAvailable === 'not-available') {
-      getQuotes(this.props).then((data) => {
-        // console.log(data);
-        store.dispatch(addChartData(createOptions(data)));
+      getQuotes(this.props).then((item) => {
+        // console.log(item);
+        store.dispatch(addChartData(createOptions({ item, store: this.props })));
       })
     }
   }
@@ -47,6 +47,7 @@ class Graph_ extends React.Component {
     </div>
     }
     return <div className={'graph-list-container d-flex flex-column container-fluid addScroll'}>
+      <Filter />
       <Chart />
     </div>
   }
