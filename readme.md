@@ -1,6 +1,5 @@
 Applcation that provides user with market exchange data
 
-
 charts-dev => https://goofy-curie-94191e.netlify.app/
 
 Приложение Charts
@@ -11,6 +10,6 @@ charts-dev => https://goofy-curie-94191e.netlify.app/
 
 3. Для представления котировок акций и ETF бирж "NYSE", "NYSE ARCA", "NYSE MKT", "NASDAQ", "BATS" используется api от Alphavantage.
 
-4. Для представления графиков используется библиотека используется библиотека apexcharts.js.
+4. Для представления графиков используется библиотека apexcharts.js.
 
 5. Для получения новостей используется api от newsapi.org.
