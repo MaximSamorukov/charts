@@ -5,7 +5,7 @@ export default (item) => {
       x: `${date.getUTCMonth() + 1}/${date.getUTCDate()} / ${date.getUTCHours()}:${date.getUTCMinutes()}`,
       y: [open, high, low, close]
     }
-  });
+  }).reverse();
   console.log(data);
 
   const options = {

@@ -18,7 +18,19 @@ class Graph_ extends React.Component {
   };
 
   componentDidMount() {
+    // const { dataAvailable } = this.props;
+    // console.log(this.props);
+    // if (dataAvailable === 'not-available') {
+    //   getQuotes(this.props).then((data) => {
+    //     // console.log(data);
+    //     store.dispatch(addChartData(createOptions(data)));
+    //   })
+    // }
+  }
+
+  componentDidUpdate() {
     const { dataAvailable } = this.props;
+    console.log(this.props);
     if (dataAvailable === 'not-available') {
       getQuotes(this.props).then((data) => {
         // console.log(data);

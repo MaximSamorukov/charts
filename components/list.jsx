@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { layout } from '../service/layoutCreater';
-import { getList } from '../service/getApiData';
+import { getList, getQuotes } from '../service/getApiData';
 import { store } from '../service/reducer';
 import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
 import { changeTicket } from '../service/action';
+import createOptions from '../service/createObjectForChart';
+import { addChartData } from '../service/action';
 
 class List_ extends React.Component {
   constructor(props) {
@@ -14,7 +16,12 @@ class List_ extends React.Component {
   };
 
   onclick(e) {
+    // console.log(this);
     store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
+    // getQuotes(this.props).then((data) => {
+    //   console.log(data);
+    //   store.dispatch(addChartData(createOptions(data)));
+    // })
   }
   render() {
     const { market } = store.getState();

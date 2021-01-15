@@ -16,6 +16,12 @@ class Chart_ extends React.Component {
     super(props)
   };
 
+  componentDidUpdate() {
+    const { dataForCharts } = this.props;
+    console.log('!!!!!!');
+    console.log(dataForCharts)
+  }
+
   componentDidMount() {
     const { dataForCharts } = this.props;
     const target = (document.querySelector('#chart-cont'));
