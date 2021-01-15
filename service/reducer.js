@@ -9,7 +9,14 @@ const reducer = (state, { type, payload }) => {
       return { ...state, ticket: payload.ticket };
     case 'ADD_NEWS':
       const { news } = payload;
-      return { ...state, news }
+      return { ...state, news };
+    case 'ADD_CHART_DATA':
+      const { dataForCharts } = payload;
+      return {
+        ...state,
+        dataForCharts,
+        dataAvailable: 'available',
+      }
     default:
       return state;
   }

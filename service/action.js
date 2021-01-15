@@ -24,4 +24,14 @@ const addData = (news) => {
     }
   })
 }
-export { changeMarket, changeTicket, addData };
+
+const addChartData = (dataForCharts) => {
+  return ({
+    type: 'ADD_CHART_DATA',
+    payload: {
+      dataForCharts
+    }
+  })
+}
+
+export { changeMarket, changeTicket, addData, addChartData };

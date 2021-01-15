@@ -13,12 +13,12 @@ function getList(market) {
   }
 }
 
-async function getQuotes(data) {
+async function getQuotes({ ticket, interval, amount }) {
   const stocks = new Stocks(ALPHA_API_KEY);
   const result = await stocks.timeSeries({
-    symbol: 'AAPL',
-    interval: 'weekly',
-    amount: 52
+    symbol: ticket,
+    interval,
+    amount
   });
   return result;
 }

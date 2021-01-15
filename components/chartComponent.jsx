@@ -1,46 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { layout } from '../service/layoutCreater';
+import { getQuotes } from '../service/getApiData';
 import { store } from '../service/reducer';
 import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
 import { getNewsRequest } from '../service/getNewsRequest';
 import NewsItem from './newsItem.jsx';
-import { addChartData } from '../service/action';
-import Chart from './chartComponent.jsx';
-import { getQuotes } from '../service/getApiData';
-import createOptions from '../service/createObjectForChart';
+import { addData } from '../service/action';
+import ApexCharts from 'apexcharts';
 
-class Graph_ extends React.Component {
+class Chart_ extends React.Component {
   constructor(props) {
     super(props)
   };
 
   componentDidMount() {
-    const { dataAvailable } = this.props;
-    if (dataAvailable === 'not-available') {
-      getQuotes(this.props).then((data) => {
-        // console.log(data);
-        store.dispatch(addChartData(createOptions(data)));
-      })
-    }
+    const { dataForCharts } = this.props;
+    const target = (document.querySelector('#chart-cont'));
+    const place = new ApexCharts(target, dataForCharts);
+    console.log(dataForCharts);
+    console.log(target);
+    place.render();
   }
 
   render() {
-    const { dataAvailable } = this.props;
-    if (dataAvailable === 'not-available') {
-      return <div className={'graph-list-container d-flex flex-column container-fluid addScroll'}>
-        We are getting the data...
-    </div>
-    }
-    return <div className={'graph-list-container d-flex flex-column container-fluid addScroll'}>
-      <Chart />
+    return <div id={'chart-cont'} className={'chart-container d-flex flex-column container-fluid addScroll'}>
+      Graph
     </div>
   }
 }
 
-export default connect(mapStateToProps, null)(Graph_);
+export default connect(mapStateToProps, null)(Chart_);
 
 // articles: Array(5)
 // 0:

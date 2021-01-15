@@ -1,6 +1,6 @@
 const initstate = {
   market: 'NYSE',
-  ticket: '',
+  ticket: 'A',
   news: [
     {
       author: "Sharon Wrobel",
@@ -16,7 +16,11 @@ const initstate = {
       topic: "finance",
       _id: "20915dab2f369d8dbbe29b5a4efbf9a1",
     }
-  ]
+  ],
+  interval: '15min',
+  amount: 52,
+  dataAvailable: 'not-available', // 'not-available', 'available' if data with quoutes is get from api
+  dataForCharts: {},
 }
 
 export { initstate };
