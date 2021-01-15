@@ -2,7 +2,7 @@ export default (item) => {
   console.log(item);
   const data = item.map(({ open, high, low, close, date }) => {
     return {
-      x: date,
+      x: `${date.getUTCMonth() + 1}/${date.getUTCDate()} / ${date.getUTCHours()}:${date.getUTCMinutes()}`,
       y: [open, high, low, close]
     }
   });
@@ -17,7 +17,7 @@ export default (item) => {
       align: 'center',
     },
     xaxis: {
-      type: 'datetime',
+      type: 'category',
     },
     yaxis: {
       tooltip: {
