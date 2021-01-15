@@ -52,6 +52,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@reduxjs/toolkit": "^1.5.0",
+    "apexcharts": "^3.23.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta1",
     "node-polyfill-webpack-plugin": "^1.0.2",
@@ -59,6 +60,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
+    "stocks.js": "0.0.19",
     "uuid": "^8.3.2"
   }
 }

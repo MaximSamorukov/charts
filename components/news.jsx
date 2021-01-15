@@ -16,10 +16,16 @@ class News_ extends React.Component {
   };
 
   componentDidMount() {
-    getNews()
-      .then((items) => {
-        store.dispatch(addData(items));
-      })
+    const local = window.localStorage;
+    if (!local.getItem('news')) {
+      getNews()
+        .then((items) => {
+          local.setItem('news', JSON.stringify(items));
+          store.dispatch(addData(items));
+        })
+    } else {
+      store.dispatch(addData(JSON.parse(local.getItem('news'))))
+    }
   }
 
   render() {
