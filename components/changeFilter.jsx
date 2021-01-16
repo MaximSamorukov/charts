@@ -24,7 +24,7 @@ class Filter_ extends React.Component {
     e.preventDefault();
     // console.log(e.target.children[2].value);
     const interval = e.target.children[0].value;
-    const amount = e.target.children[2].value;
+    const amount = parseInt(e.target.children[2].value);
     const start = new Date(e.target.children[5].value);
     const end = new Date(e.target.children[7].value);
     const payload = {
@@ -60,7 +60,7 @@ class Filter_ extends React.Component {
             })}
           </select>
           <input checked={ifAmount} type="radio" name="onAmountIntervals" id="onAmountIntervals" />
-          <input disabled={!ifAmount} size="2" type="text" placeholder="Intervals" id="intervals" name="intervals" value={amount} />
+          <input disabled={!ifAmount} size="2" type="text" placeholder="Intervals" id="intervals" name="intervals" />
           <input checked={!ifAmount} type="radio" name="onDateInteval" id="onDateInteval" />
           <label htmlFor="from">From:</label>
           <input disabled={ifAmount} type="date" id="from" name="from" />

@@ -1,4 +1,4 @@
-export default ({ item, store: { interval, market, ticket, company } }) => {
+export default ({ item, store: { interval, market, ticket, company, amount, ifAmount } }) => {
   // console.log(item);
   const data = item.map(({ open, high, low, close, date }) => {
     return {
@@ -13,7 +13,7 @@ export default ({ item, store: { interval, market, ticket, company } }) => {
       type: 'candlestick',
     },
     title: {
-      text: `${company}, ${ticket}, ${market}, ${interval}`,
+      text: `${company}, ${ticket}, ${market}, ${interval}, ${ifAmount && amount}`,
       align: 'center',
     },
     xaxis: {
