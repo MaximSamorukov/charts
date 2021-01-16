@@ -20,6 +20,16 @@ const reducer = (state, { type, payload }) => {
     case 'CHANGE_INTERVAL':
       const { interval } = payload;
       return { ...state, interval, dataAvailable: 'not-available' };
+    case 'CHANGE_AMOUNT':
+      const { amount } = payload;
+      return { ...state, amount, dataAvailable: 'not-available' };
+    case 'TOGGLE_AMOUNT':
+      const { ifAmount } = state;
+      return { ...state, ifAmount: !ifAmount };
+    case 'UPDATE_GRAPH_ON_OPTIONS': {
+      const { interval, amount, start, end } = payload;
+      return { ...state, interval, amount, start, end, dataAvailable: 'not-available' };
+    }
     default:
       return state;
   }
@@ -30,3 +40,5 @@ store.subscribe(() => {
   console.log(store.getState());
 })
 export { store };
+
+

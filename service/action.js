@@ -43,4 +43,26 @@ const changeInterval = (interval) => {
   })
 }
 
-export { changeMarket, changeTicket, addData, addChartData, changeInterval };
+const changeAmount = (amount) => {
+  return ({
+    type: 'CHANGE_AMOUNT',
+    payload: {
+      amount
+    }
+  })
+}
+
+const toggleIfAmount = () => {
+  return ({
+    type: 'TOGGLE_AMOUNT',
+  })
+}
+
+const updateGraphOnOptions = (payload) => {
+  return ({
+    type: 'UPDATE_GRAPH_ON_OPTIONS',
+    payload,
+  })
+}
+
+export { updateGraphOnOptions, toggleIfAmount, changeMarket, changeTicket, addData, addChartData, changeInterval, changeAmount };

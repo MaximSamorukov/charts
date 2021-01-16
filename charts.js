@@ -19,6 +19,9 @@ const initstate = {
   ],
   interval: '15min',
   amount: 52,
+  start: Date.now(),
+  end: Date.now(),
+  ifAmount: true,
   dataAvailable: 'not-available', // 'not-available', 'available' if data with quoutes is get from api
   dataForCharts: {},
 }

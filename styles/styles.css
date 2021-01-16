@@ -110,3 +110,11 @@
 .news-item-sum {
   font-size: 10px;
 }
+
+.form-container select,
+.form-container button,
+.form-container option,
+.form-container label,
+.form-container input {
+  font-size: 12px;
+}

@@ -13,13 +13,24 @@ function getList(market) {
   }
 }
 
-async function getQuotes({ ticket, interval, amount }) {
+async function getQuotes({ ticket, interval, amount, start, end, ifAmount }) {
   const stocks = new Stocks(ALPHA_API_KEY);
-  const result = await stocks.timeSeries({
-    symbol: ticket,
-    interval,
-    amount
-  });
+  let options = {}
+  if (ifAmount) {
+    options = {
+      symbol: ticket,
+      interval,
+      amount
+    }
+  } else {
+    options = {
+      symbol: ticket,
+      interval,
+      start,
+      end
+    }
+  };
+  const result = await stocks.timeSeries(options);
   return result;
 }
 
