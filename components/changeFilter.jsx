@@ -24,7 +24,7 @@ class Filter_ extends React.Component {
     e.preventDefault();
     // console.log(e.target.children[2].value);
     const interval = e.target.children[0].value;
-    const amount = parseInt(e.target.children[2].value);
+    const amount = parseInt(e.target.children[2].value) || store.getState().amount;
     const start = new Date(e.target.children[5].value);
     const end = new Date(e.target.children[7].value);
     const payload = {
