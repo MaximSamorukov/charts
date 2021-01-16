@@ -6,7 +6,8 @@ const reducer = (state, { type, payload }) => {
     case 'CHANGE_MARKET':
       return { ...state, market: payload.market };
     case 'CHANGE_TICKET':
-      return { ...state, dataAvailable: 'not-available', ticket: payload.ticket };
+      const { ticket, company } = payload;
+      return { ...state, dataAvailable: 'not-available', ticket, company };
     case 'ADD_NEWS':
       const { news } = payload;
       return { ...state, news };

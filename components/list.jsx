@@ -17,7 +17,9 @@ class List_ extends React.Component {
 
   onclick(e) {
     // console.log(this);
-    store.dispatch(changeTicket(e.currentTarget.children[0].textContent.split(',')[0]));
+    const ticket = e.currentTarget.children[0].textContent.split(',')[0];
+    const company = e.currentTarget.children[1].textContent;
+    store.dispatch(changeTicket({ ticket, company }));
     // getQuotes(this.props).then((data) => {
     //   console.log(data);
     //   store.dispatch(addChartData(createOptions(data)));

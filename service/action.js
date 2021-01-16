@@ -7,11 +7,12 @@ const changeMarket = (market) => {
   })
 }
 
-const changeTicket = (ticket) => {
+const changeTicket = ({ ticket, company }) => {
   return ({
     type: 'CHANGE_TICKET',
     payload: {
       ticket,
+      company
     }
   })
 }

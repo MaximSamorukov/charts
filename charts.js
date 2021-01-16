@@ -1,5 +1,6 @@
 const initstate = {
   market: 'NYSE',
+  company: 'Agilent Technologies Inc',
   ticket: 'A',
   news: [
     {
