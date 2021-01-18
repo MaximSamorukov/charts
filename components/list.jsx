@@ -8,12 +8,19 @@ import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
 import { changeTicket } from '../service/action';
 import createOptions from '../service/createObjectForChart';
-import { addChartData } from '../service/action';
+import { updateMarketList, addChartData } from '../service/action';
 
 class List_ extends React.Component {
   constructor(props) {
     super(props)
   };
+
+  componentDidMount() {
+    const { market } = this.props;
+    getList(market).then((data) => {
+      store.dispatch(updateMarketList(data));
+    });
+  }
 
   onclick(e) {
     // console.log(this);
@@ -26,9 +33,9 @@ class List_ extends React.Component {
     // })
   }
   render() {
-    const { market } = store.getState();
+    const { marketList } = this.props;
     return <div className={'ticket-list-container d-flex flex-column container-fluid addScroll'}>{
-      getList(market).map((i) => (
+      marketList.map((i) => (
         <div onClick={this.onclick} className={'list-string'} key={uuidv4()}>
           <div className={'list-string-fcol'}>{i[0]}, {i[2]}</div>
           <div className={'list-string-scol'}>{i[1]}</div>
@@ -39,3 +46,12 @@ class List_ extends React.Component {
 }
 
 export default connect(mapStateToProps, null)(List_);
+
+// getList(market).then((data) => {
+//   data.map((i) => (
+//     <div onClick={this.onclick} className={'list-string'} key={uuidv4()}>
+//       <div className={'list-string-fcol'}>{i[0]}, {i[2]}</div>
+//       <div className={'list-string-scol'}>{i[1]}</div>
+//     </div>
+//   ))
+// })

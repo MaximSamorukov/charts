@@ -12,7 +12,7 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
     chart: {
       type: 'candlestick',
       width: '100%',
-      height: '93%',
+      height: '90%',
       parentHeightOffset: 15,
     },
     title: {

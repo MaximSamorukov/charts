@@ -25,6 +25,7 @@ const initstate = {
   ifAmount: true,
   dataAvailable: 'not-available', // 'not-available', 'available' if data with quoutes is get from api
   dataForCharts: {},
+  marketList: [],
 }
 
 export { initstate };

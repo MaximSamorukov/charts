@@ -66,4 +66,13 @@ const updateGraphOnOptions = (payload) => {
   })
 }
 
-export { updateGraphOnOptions, toggleIfAmount, changeMarket, changeTicket, addData, addChartData, changeInterval, changeAmount };
+const updateMarketList = (marketList) => {
+  return ({
+    type: 'UPDATE_MARKET_LIST',
+    payload: {
+      marketList,
+    }
+  })
+}
+
+export { updateMarketList, updateGraphOnOptions, toggleIfAmount, changeMarket, changeTicket, addData, addChartData, changeInterval, changeAmount };

@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { layout } from '../service/layoutCreater';
-import { changeMarket } from '../service/action';
+import { updateMarketList, addChartData, changeMarket } from '../service/action';
 import { store } from '../service/reducer';
 import { ifActiveBtn } from '../service/ifActiveBtn';
 import { connect } from 'react-redux';
 import { mapStateToProps } from '../service/mapStatetoProps';
+import { getList, getQuotes } from '../service/getApiData';
 
 // NYSE, NYSE ARCA, NASDAQ, NYSE MKT, BATS
 class Markets_ extends React.Component {
@@ -14,6 +15,9 @@ class Markets_ extends React.Component {
   };
   onclick(e) {
     store.dispatch(changeMarket(e.target.textContent));
+    getList(e.target.textContent).then((data) => {
+      store.dispatch(updateMarketList(data));
+    });
 
   }
   render() {
