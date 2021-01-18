@@ -13,6 +13,7 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
       type: 'candlestick',
       width: '100%',
       height: '93%',
+      parentHeightOffset: 15,
     },
     title: {
       text: `${company}, ${ticket}, ${market}, ${interval}, ${ifAmount && amount}`,
