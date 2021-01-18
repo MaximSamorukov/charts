@@ -24,7 +24,7 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
     yaxis: {
       tooltip: {
         enabled: true,
-      }
+      },
     },
     series: [{
       data
@@ -45,7 +45,7 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
         }
       },
       padding: {
-        top: 5,
+        top: 0,
         right: 0,
         bottom: 0,
         left: 0
