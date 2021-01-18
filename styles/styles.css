@@ -36,15 +36,29 @@
 }
 
 .graph-container {
-  min-height: 60%;
+  /* min-height: 60%; */
   height: 60%;
 }
 
 .chart-container,
-.graph-list-container,
 .ticket-list-container,
 .news-list-container {
   flex: 1;
+}
+
+.chart-container {
+  /* border: 1px solid red; */
+  padding: 1px;
+  /* height: 70%; */
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.graph-list-container {
+  /* border: 1px solid green; */
+  flex: 1;
+  box-sizing: border-box;
+  padding: 1px;
 }
 
 .news-list-container {

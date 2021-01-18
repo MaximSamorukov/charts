@@ -30,11 +30,11 @@ class Graph_ extends React.Component {
   render() {
     const { dataAvailable } = this.props;
     if (dataAvailable === 'not-available') {
-      return <div className={'graph-list-container d-flex flex-column container-fluid addScroll'}>
+      return <div className={'graph-list-container d-flex'}>
         We are getting the data...
     </div>
     }
-    return <div className={'graph-list-container d-flex flex-column container-fluid addScroll'}>
+    return <div className={'graph-list-container'}>
       <Filter />
       <Chart />
     </div>

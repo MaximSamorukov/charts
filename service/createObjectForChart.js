@@ -11,6 +11,8 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
   const options = {
     chart: {
       type: 'candlestick',
+      width: '100%',
+      parentHeightOffset: 0
     },
     title: {
       text: `${company}, ${ticket}, ${market}, ${interval}, ${ifAmount && amount}`,
@@ -27,6 +29,28 @@ export default ({ item, store: { interval, market, ticket, company, amount, ifAm
     series: [{
       data
     }],
+    grid: {
+      show: true,
+      borderColor: '#111',
+      strokeDashArray: 0,
+      position: 'back',
+      xaxis: {
+        lines: {
+          show: true,
+        }
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        }
+      },
+      padding: {
+        top: 5,
+        right: 0,
+        bottom: 0,
+        left: 0
+      },
+    }
   }
   return options;
 }

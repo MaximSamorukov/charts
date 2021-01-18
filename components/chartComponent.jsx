@@ -32,7 +32,7 @@ class Chart_ extends React.Component {
   }
 
   render() {
-    return <div id={'chart-cont'} className={'chart-container d-flex flex-column container-fluid addScroll'} />
+    return <div id={'chart-cont'} className={'d-flex chart-container'} />
   }
 }
 
